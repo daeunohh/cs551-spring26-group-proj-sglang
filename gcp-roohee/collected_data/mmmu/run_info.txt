@@ -1,0 +1,11 @@
+dataset_name=mmmu
+num_prompts=4000
+host=35.221.186.147
+port=30000
+request_rate=32
+max_concurrency=32
+model=google/gemma-2-2b-it
+timestamp=20260417-231225
+outdir=logs/mmmu/20260417-231225
+bench_start_epoch=1776467605.880629
+bench_end_epoch=1776468733.845207
