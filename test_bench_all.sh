@@ -4,7 +4,7 @@
 DATASETS=("sharegpt" "random" "random-ids" "generated-shared-prefix")
 
 # 테스트를 위해 요청 수를 30개로 대폭 수정
-NUM_PROMPTS=5
+NUM_PROMPTS=4000
 HOST="127.0.0.1"
 PORT=30000
 METRICS_URL="http://localhost:9400/metrics"
