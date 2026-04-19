@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # 데이터셋 모드 (SGLang 내부 합성 데이터셋 포함)
-DATASETS=("sharegpt" "random" "random-ids" "generated-shared-prefix")
+DATASETS=("generated-shared-prefix")
 
 # 테스트를 위해 요청 수를 30개로 대폭 수정
 NUM_PROMPTS=4000

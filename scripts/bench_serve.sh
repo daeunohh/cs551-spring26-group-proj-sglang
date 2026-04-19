@@ -113,7 +113,7 @@ echo "Concurrency:    $MAX_CONCURRENCY"
 echo "Output JSONL:   $OUTFILE"
 echo
 
-"$PYTHON" -m sglang.bench_serving     --backend sglang     --host "$HOST"     --port "$PORT"     --model "$MODEL"     --dataset-name "$DATASET_NAME"  --dataset-path "$DATASET_PATH"    --num-prompts "$NUM_PROMPTS"     --max-concurrency "$MAX_CONCURRENCY"     --request-rate "$REQUEST_RATE"     --flush-cache     --output-details     --disable-stream     --output-file "$OUTFILE"
+"$PYTHON" -m sglang.bench_serving     --backend sglang     --host "$HOST"     --port "$PORT"     --model "$MODEL"     --dataset-name "$DATASET_NAME"  --dataset-path "$DATASET_PATH"    --num-prompts "$NUM_PROMPTS"     --max-concurrency "$MAX_CONCURRENCY"     --request-rate "$REQUEST_RATE"     --flush-cache     --output-details     --disable-stream     --output-file "$OUTFILE" --gsp-num-groups=256
 
 BENCH_END_EPOCH="$(python3 - <<'PY'
 import time
