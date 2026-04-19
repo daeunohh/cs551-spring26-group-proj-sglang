@@ -1,0 +1,10 @@
+dataset_name=sharegpt
+num_prompts=30
+host=127.0.0.1
+port=30000
+request_rate=8
+max_concurrency=32
+model=google/gemma-2-2b-it
+timestamp=20260419-014730
+outdir=/home/daeun/cs551-spring26-group-proj-sglang/logs/sharegpt/20260419-014730
+bench_start_epoch=1776563250.039922

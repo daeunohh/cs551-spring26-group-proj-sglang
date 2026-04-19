@@ -68,6 +68,15 @@ fi
 
 MODEL="${MODEL:-meta-llama/Meta-Llama-3-8B}"
 
+DATASET_PATH="${SCRIPT_DATASET_PATH:-$REPO_ROOT/sharegpt.json}"
+
+if [ ! -f "$DATASET_PATH" ]; then
+    echo "Error: Dataset file not found at $DATASET_PATH"
+    echo "Please run: wget -O sharegpt.json https://huggingface.co/datasets/anon8231489123/ShareGPT_Vicuna_unfiltered/resolve/main/ShareGPT_V3_unfiltered_cleaned_split.json"
+    exit 1
+fi
+
+
 TIMESTAMP="${TIMESTAMP:-$(date +"%Y%m%d-%H%M%S")}"
 OUTDIR="${OUTDIR:-$REPO_ROOT/logs/$DATASET_NAME/$TIMESTAMP}"
 mkdir -p "$OUTDIR"
@@ -104,7 +113,7 @@ echo "Concurrency:    $MAX_CONCURRENCY"
 echo "Output JSONL:   $OUTFILE"
 echo
 
-"$PYTHON" -m sglang.bench_serving     --backend sglang     --host "$HOST"     --port "$PORT"     --model "$MODEL"     --dataset-name "$DATASET_NAME"     --num-prompts "$NUM_PROMPTS"     --max-concurrency "$MAX_CONCURRENCY"     --request-rate "$REQUEST_RATE"     --flush-cache     --output-details     --disable-stream     --output-file "$OUTFILE"
+"$PYTHON" -m sglang.bench_serving     --backend sglang     --host "$HOST"     --port "$PORT"     --model "$MODEL"     --dataset-name "$DATASET_NAME"  --dataset-path "$DATASET_PATH"    --num-prompts "$NUM_PROMPTS"     --max-concurrency "$MAX_CONCURRENCY"     --request-rate "$REQUEST_RATE"     --flush-cache     --output-details     --disable-stream     --output-file "$OUTFILE"
 
 BENCH_END_EPOCH="$(python3 - <<'PY'
 import time
