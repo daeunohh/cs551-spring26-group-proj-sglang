@@ -1,0 +1,11 @@
+metric,value
+benchmark_duration_s,3384.347378015518
+idle_duration_s,9.844683170318604
+avg_power_w,68.7246864760681
+avg_idle_power_w,36.898
+total_energy_j,232493.6211457088
+net_serving_energy_j,107711.71993104623
+energy_per_request_j,26.927929982761558
+energy_per_output_token_j,0.053033052161241455
+avg_gpu_util,96.42531320269836
+avg_mem_copy_util,92.24156761965949
