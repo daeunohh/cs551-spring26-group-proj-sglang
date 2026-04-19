@@ -1,0 +1,11 @@
+dataset_name=random-ids
+num_prompts=4000
+host=127.0.0.1
+port=30000
+request_rate=32
+max_concurrency=32
+model=google/gemma-2-2b-it
+timestamp=20260419-054724
+outdir=/home/daeun/cs551-spring26-group-proj-sglang/logs/random-ids/20260419-054724
+bench_start_epoch=1776577654.812636
+bench_end_epoch=1776581039.160014
